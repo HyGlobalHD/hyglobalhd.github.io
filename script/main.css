@@ -19,6 +19,7 @@ body {
 	font-family: 'Lato', sans-serif;
 	line-height: 26px;
 	font-size: 13px;
+	overflow-x: hidden;
 }
 
 
@@ -155,4 +156,15 @@ img {
 ::-webkit-scrollbar-thumb {
 	background: #7289da;
 	border-radius: 5px;
+}
+
+label{
+	color: white;
+}
+textarea {
+	width: 100%;
+	display: block;
+}
+fieldset {
+	border-color: #7289da;
 }

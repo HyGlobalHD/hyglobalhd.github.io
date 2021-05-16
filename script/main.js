@@ -16,3 +16,76 @@ function copyText() {
     copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
 }
+
+// below is to hide and unhide content based on id, and button clicked
+// this idea is so that user doesn't need to scroll  back to the top, etc.
+// intro, family, pets, schedule, hobby, contact
+var d1 = document.getElementById('intro'),
+    d2 = document.getElementById('family'),
+    d3 = document.getElementById('pets'),
+    d4 = document.getElementById('schedule'),
+    d5 = document.getElementById('hobby'),
+    d6 = document.getElementById('contact')
+    d0 = document.getElementById('splash');
+
+function setVisible(id_data) {
+    console.log(id_data + " clicked"); // debug purpose
+    d0.style.display = 'none';
+    switch (id_data) {
+        case '1':
+            d1.style.display = 'block';
+            d2.style.display = 'none';
+            d3.style.display = 'none';
+            d4.style.display = 'none';
+            d5.style.display = 'none';
+            d6.style.display = 'none';
+            break;
+        case '2':
+            d1.style.display = 'none';
+            d2.style.display = 'block';
+            d3.style.display = 'none';
+            d4.style.display = 'none';
+            d5.style.display = 'none';
+            d6.style.display = 'none';
+            break;
+
+        case '3':
+            d1.style.display = 'none';
+            d2.style.display = 'none';
+            d3.style.display = 'block';
+            d4.style.display = 'none';
+            d5.style.display = 'none';
+            d6.style.display = 'none';
+            break;
+
+        case '4':
+            d1.style.display = 'none';
+            d2.style.display = 'none';
+            d3.style.display = 'none';
+            d4.style.display = 'block';
+            d5.style.display = 'none';
+            d6.style.display = 'none';
+            break;
+
+        case '5':
+            d1.style.display = 'none';
+            d2.style.display = 'none';
+            d3.style.display = 'none';
+            d4.style.display = 'none';
+            d5.style.display = 'block';
+            d6.style.display = 'none';
+            break;
+
+        case '6':
+            d1.style.display = 'none';
+            d2.style.display = 'none';
+            d3.style.display = 'none';
+            d4.style.display = 'none';
+            d5.style.display = 'none';
+            d6.style.display = 'block';
+            break;
+
+        default:
+            break;
+    }
+}
