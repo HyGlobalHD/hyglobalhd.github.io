@@ -22,17 +22,25 @@
         <div class="header-gradient"></div>
         <div class="cover">
             <div class="header">
-                <a class="button" href="#intro">Introduction</a>
-                <a class="button" href="#family">Family</a>
-                <a class="button" href="#pets">Pets</a>
-                <a class="button" href="#schedule">Schedule</a>
-                <a class="button" href="#hobby">Hobby</a>
+                <a class="button" href="#intro" id="1" onclick="setVisible(this.id)">Introduction</a>
+                <a class="button" href="#family" id="2" onclick="setVisible(this.id)">Family</a>
+                <a class="button" href="#pets" id="3" onclick="setVisible(this.id)">Pets</a>
+                <a class="button" href="#schedule" id="4" onclick="setVisible(this.id)">Schedule</a>
+                <a class="button" href="#hobby" id="5" onclick="setVisible(this.id)">Hobby</a>
+                <a class="button" href="#contact" id="6" onclick="setVisible(this.id)">Contact</a>
             </div>
+        </div>
+
+        <div id="splash" class="content content-under">
+            <br><br><br><br><br><br><br>
+            <h2 class="center">Welcome!! to my personal website !</h2>
+            <h2 class="center"> Click on any button above to procced :) Thank you. </h2>
+            <br><br><br><br><br><br><br>
         </div>
     
     
         <!-- Content -->
-        <div id="intro" class="content content-under">
+        <div id="intro" class="content content-under" style="display: none;">
             <h2>#Introduction</h2>
             <div> 
                 <table class="box box-out center">
@@ -85,21 +93,22 @@
                </div>
         </div>
         
-        <div id="family" class="content content-under">
+        <div id="family" class="content content-under" style="display: none;">
             <h2>#Family</h2>
             <p>About my family here
             </br>My family have a total of 7 people, including my parents.
             </br>I have 2 brother, and 2 little sister.
             </br>I am the middle child.</p>
+            <br><br><br><br><br><br><br><br><br>
         </div>
 
-        <div id="pets" class="content content-under">
+        <div id="pets" class="content content-under" style="display: none;">
             <h2>#Pets</h2>
             <p>This is my pet, his name is cotton.</p>
             <img src="media/mypets.jpg" height="250px" width="250px">
         </div>
 
-        <div id="schedule" class="content content-under">
+        <div id="schedule" class="content content-under" style="display: none;">
             <h2>#Schedule</h2>
             <p>This is my schedule for semester 4</p>
             <table class="box box-out center">
@@ -150,7 +159,7 @@
             </table>
         </div>
 
-        <div id="hobby" class="content content-under">
+        <div id="hobby" class="content content-under" style="display: none;">
             <h2>#Hobby</h2>
             <p>My hobby:
             <br>
@@ -167,9 +176,8 @@
             I also try to upload some part of my code in <a href="https://github.com/hyglobalhd">Github</a>.
 
             </p>
-        </div>
-
-        <div class="content content-under">
+            
+        <div class="content">
             <p>One of my favourite bgm from MaplestorySEA. Usually start at the login main screen.</p>
             <div class="center">
                 <!-- Audio Source: Maplestory -->
@@ -178,6 +186,50 @@
                     <source src="media/ms-title.ogg" type="audio/ogg">
                 </audio>
             </div>
+        </div>
+        </div>
+
+
+        <div id="contact" class="content content-under" style="display: none;">
+            <h2>Contact Me! </h2>
+            <!-- Contact me: idea to send an email from a static website using google script-->
+            <!-- learn how to do from: https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server -->
+            <!-- Disclaimer: I don't use 100% of what it teach, instead I only use a bit of the knowledge to set up a google script and set up my own form using my css and javascript.-->
+            <!--https://script.google.com/macros/s/AKfycbxVo5qOW8a4XLDTKXz0c47XqZx7jRbVeinJIUb1/exec -->
+            <form class="gform" method="POST" action="https://script.google.com/macros/s/AKfycbxVo5qOW8a4XLDTKXz0c47XqZx7jRbVeinJIUb1/exec">
+                <div class="form-data">
+                    <fieldset>
+                        <label for="name">Name: </label>
+                        <input type="text" id="name" name="name" required placeholder="Your name"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">Your Email: </label>
+                        <input id="email" name="email" type="email" value="" required placeholder="your.name@email.com"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="message">Message: </label>
+                        <textarea id="message" name="message" rows="10" placeholder="Your message here."></textarea>
+                    </fieldset>
+                    <fieldset style="display: none;">
+                        <!-- Credit for security information to avoid bot spam: https://github.com/dwyl/ -->
+                        <label for="honeypot" style="display: none;">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+                        <input id="honeypot" type="text" name="honeypot" value="" style="display: none;"/>
+                    </fieldset>
+                    <fieldset>
+                        <label for="captcha">Enter captcha: </label>
+                        <input id="captcha-input" name="captcha" placeholder="Enter the captcha" value="" required/>
+                        <em><span id="captcha-data" style="color: #7289da; font-size: 30px;"></span></em>
+                        <div class="button" onclick="captchaValidation()">Validation</div>
+                    </fieldset>
+                    <p></p>
+                        <button class="button" id="captcha-button" style="display: none;">Send</button>
+    
+                </div>
+                
+                <div class="thank_you center" style="display: none;">
+                    <h2>Thank you for contacting me! <br> I will contact you back!</h2>
+                </div>
+            </form>
         </div>
 
 
@@ -193,5 +245,9 @@
     </div>
     <!-- Scripts -->
     <script src="script/main.js"></script>
+    <script src="script/simpleCaptcha.js"></script>
+
+    <!-- contact form handler inspired from: https://github.com/dwyl/ -->
+    <script data-cfasync="false" src="script/form_handler.js"></script>
 </body>
 </html>

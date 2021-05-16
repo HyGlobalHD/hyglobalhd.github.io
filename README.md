@@ -27,7 +27,7 @@ HTML5
 
 
 # todo
-- [ ] Add contact me
-- [ ] hide other element, unless clicked the button to show other element
-- [ ] add recaptcha for contact me
+- [x] Add contact me
+- [x] hide other element, unless clicked the button to show other element
+- [x] add recaptcha for contact me
 - [ ] change some design in color scheme
