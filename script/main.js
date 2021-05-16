@@ -1,5 +1,6 @@
 // The code below are inspired from innerHTML documentation, and has been improviesed
 // the code are to get the current year and compare it to the year, the code are made.
+
 var getYear = new Date().getFullYear(); // current year
 if (getYear > 2021) {
     document.getElementById("year").innerHTML = "2021 - " + getYear
