@@ -23,3 +23,11 @@ Design
 [ below ]
 
 HTML5
+
+
+
+# todo
+- [ ] Add contact me
+- [ ] hide other element, unless clicked the button to show other element
+- [ ] add recaptcha for contact me
+- [ ] change some design in color scheme
