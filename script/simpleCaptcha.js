@@ -1,6 +1,6 @@
 // a simple captcha
 // made for additional security for my form
-
+//
 let uinput = ''; // none for user input
 let key = ''; // current key
 
