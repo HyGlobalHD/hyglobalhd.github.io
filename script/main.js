@@ -12,10 +12,11 @@ if (getYear > 2021) {
 // it function as a copy to clipboard when clicked
 // since thereis nothing to be improvised for this code, it is left alone for the future endavour. 
 function copyText() {
-    var copyText = document.getElementById("copy");
-    copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    document.execCommand("copy");
+      var copyText = document.getElementById("copy");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999)
+      document.execCommand("copy");
+      alert("Copied the text: " + copyText.value);
 }
 
 // below is to hide and unhide content based on id, and button clicked
