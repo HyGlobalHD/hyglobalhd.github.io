@@ -8,15 +8,14 @@ if (getYear > 2021) {
     document.getElementById("year").innerHTML = new Date().getFullYear();
 }
 
-// the function below are taken by w3schools
-// it function as a copy to clipboard when clicked
-// since thereis nothing to be improvised for this code, it is left alone for the future endavour. 
+
 function copyText() {
-      var copyText = document.getElementById("copy");
-      copyText.select();
-      copyText.setSelectionRange(0, 99999)
-      document.execCommand("copy");
-      alert("Copied the text: " + copyText.value);
+    // note to self: the function execCommand('copy') are not available anymore
+    // using clipboard API
+    const cb = navigator.clipboard;
+    const cp = document.getElementById('copy');
+    let text = cp.innerText;
+    cb.writeText(text).then(() => console.log('Text copied: ' + text)); // debug
 }
 
 // below is to hide and unhide content based on id, and button clicked
@@ -28,7 +27,7 @@ var d1 = document.getElementById('intro'),
     d4 = document.getElementById('schedule'),
     d5 = document.getElementById('hobby'),
     d6 = document.getElementById('contact')
-    d0 = document.getElementById('splash');
+d0 = document.getElementById('splash');
 
 function setVisible(id_data) {
     console.log(id_data + " clicked"); // debug purpose
@@ -91,4 +90,4 @@ function setVisible(id_data) {
             break;
     }
 }
-// 
+//

@@ -17,8 +17,8 @@ temp = ''; // empty temp
 
 document.getElementById("captcha-data").innerHTML = key;
 
-document.getElementById("captcha-button").disabled = true;
-document.getElementById("captcha-button").style.display = 'none';
+// document.getElementById("captcha-button").disabled = true;
+// document.getElementById("captcha-button").style.display = 'none';
 function captchaValidation() {
     uinput = document.getElementById("captcha-input").value;
     if (uinput != key) {
@@ -26,8 +26,9 @@ function captchaValidation() {
        console.log('Failed captcha');
     } else {
         console.log('Success captcha');
-        document.getElementById("captcha-button").disabled = false;
-        document.getElementById("captcha-button").style.display = 'block';
-        captcha = false;
+        // document.getElementById("captcha-button").disabled = false;
+        // document.getElementById("captcha-button").style.display = 'block';
+        // captcha = false;
+        document.getElementById('button_validated').innerHTML = '<button class="button" id="captcha-button">Send</button>';
     }
 }
