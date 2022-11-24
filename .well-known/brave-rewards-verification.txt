@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: hyglobalhd.github.io
+Token: d7f42534260557eb928ede49c9ba630944fc38f12b2259b841841dfab253b558
